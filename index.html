@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Projeto</title>
+</head>
+
+<body>
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h1> <img src=".\img\honda.webp" id="carro1"> Sistema de Controle de Veículos <img src=".\img\honda.webp" id="carro2"></h1>
+            <hr>
+            <div class="areaBotoes">
+                <label id="meu_label">Clique no botão para exibir / ocultar o módulo: </label>
+                <button onclick="mudarEstado('mostraTudo')" class="addBtn">Exibir Todo o Cadastro</button>
+                <button onclick="mudarEstado('apagador')" class="addBtn">Deletar Registro</button>
+                <button onclick="mudarEstado('cadastrador')" class="addBtn">Cadastrar Veículo</button>
+                <button onclick="mudarEstado('buscador')" class="addBtn">Consultar Placa</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Consulta individual no cadastro de veículos -->
+    <div class="buscaItem" id="buscador">
+        <fieldset id="meu_fieldset">
+            <legend id="legenda">Consultar veículo cadastrado</legend>
+            <p>
+                <label id="meu_label">Informe a placa para consulta: </label>
+                <input type="text" id="placaConsultada" placeholder="Placa para a consulta", size="20">
+            </p>
+            <p>    
+                <button onclick="consultaPlaca()" class="addBtn">Consultar</button>
+            </p>
+        </fieldset>
+    </div>
+
+     <!-- Inserir novo cadastro de veículo -->
+     <div class="newItem" id="cadastrador">
+        <fieldset id="meu_fieldset">
+            <legend id="legenda">Cadastrar Novos Veículos</legend>
+            <p>
+                <label id="meu_label">Informe o nome completo: </label>
+                <input type="text" id="novoFuncionario" placeholder="Nome completo do funcionário", size="50">
+            </p>
+            <p>
+                <label id="meu_label">Informe o setor de trabalho: </label>
+                <input type="text" id="novoSetor" placeholder="Setor de Trabalho">
+            </p>
+            <p>
+                <label id="meu_label">Informe a placa do veículo: </label>
+                <input type="text" id="novaPlaca" placeholder="Placa">
+            </p>
+            <p>    
+                <button onclick="newItem()" class="addBtn">Cadastrar</button>
+            </p>
+        </fieldset>
+    </div>
+
+    <!-- Deletar veículo -->
+    <div class="deletaItem" id="apagador">
+        <fieldset id="meu_fieldset">
+            <legend id="legenda">Excluir veículo cadastrado</legend>
+                <p id="meu_label"> 1 - Caso a tabela abaixo não esteja visível, clique no botão "Exibir Todo o Cadastro" </p>
+                <p id="meu_label"> 2 - Clique no 'X' ao lado do registro que deseja excluir </p>
+        </fieldset>
+    </div>
+
+    <!-- Tabela com todos os cadastros existentes -->
+    <div class="items" id="mostraTudo">
+        <fieldset id="meu_fieldset">
+            <legend id="legenda">Todos os Veículos Cadastrados</legend>
+            <table id="myTable">
+                <tr>
+                    <th>Funcionário</th>
+                    <th>Setor</th>
+                    <th>Placa</th>
+                    <th><img src="./img/botaoDel.jpg" width="50px" height="50px"></th>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+
+
